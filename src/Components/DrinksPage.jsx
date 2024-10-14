@@ -11,7 +11,7 @@ function DrinksPage() {
   const fetchDrinks = () => {
     setIsLoading(true);
     console.log(isLoading);
-    fetch("https://kale-cafe-server.onrendercom/api/getDrinks", {
+    fetch("https://kale-cafe-server.onrender.com/api/getDrinks", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function DrinksPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://kale-cafe-server.onrendercom/api/deleteDrink/${_id}`, {
+        fetch(`https://kale-cafe-server.onrender.com/api/deleteDrink/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -130,8 +130,8 @@ function DrinksPage() {
     setIsSubmitting(true);
 
     const url = isEditMode
-      ? `https://kale-cafe-server.onrendercom/api/updateDrink/${editDrinkId}`
-      : "https://kale-cafe-server.onrendercom/api/addDrink";
+      ? `https://kale-cafe-server.onrender.com/api/updateDrink/${editDrinkId}`
+      : "https://kale-cafe-server.onrender.com/api/addDrink";
 
     const method = isEditMode ? "PUT" : "POST";
 
@@ -166,7 +166,7 @@ function DrinksPage() {
 
   //   try {
   //     const response = await fetch(
-  //       `https://kale-cafe-server.onrendercom/api/searchDrink?q=${encodeURIComponent(
+  //       `https://kale-cafe-server.onrender.com/api/searchDrink?q=${encodeURIComponent(
   //         searchValue
   //       )}`,
   //       {
@@ -204,7 +204,7 @@ function DrinksPage() {
 
     try {
       const response = await fetch(
-        `https://kale-cafe-server.onrendercom/api/searchDrink?q=${encodeURIComponent(
+        `https://kale-cafe-server.onrender.com/api/searchDrink?q=${encodeURIComponent(
           searchValue
         )}`,
         {

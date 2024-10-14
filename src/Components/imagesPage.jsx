@@ -19,7 +19,7 @@ function ImagesPage() {
     try {
       setIsLoading(true);
       const response = await fetch(
-        "https://kale-cafe-server.onrendercom/api/getImages",
+        "https://kale-cafe-server.onrender.com/api/getImages",
         {
           method: "GET",
           headers: {
@@ -47,7 +47,7 @@ function ImagesPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://kale-cafe-server.onrendercom/api/deleteImage/${_id}`, {
+        fetch(`https://kale-cafe-server.onrender.com/api/deleteImage/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -81,7 +81,7 @@ function ImagesPage() {
     e.preventDefault();
 
     try {
-      const url = "https://kale-cafe-server.onrendercom/api/addImage";
+      const url = "https://kale-cafe-server.onrender.com/api/addImage";
 
       // Create a FormData object to handle the form data and file upload
       const formDataToSend = new FormData();
@@ -121,7 +121,7 @@ function ImagesPage() {
 
     try {
       const response = await fetch(
-        `https://kale-cafe-server.onrendercom/api/searchDrink?q=${encodeURIComponent(
+        `https://kale-cafe-server.onrender.com/api/searchDrink?q=${encodeURIComponent(
           searchValue
         )}`,
         {
@@ -156,7 +156,7 @@ function ImagesPage() {
     <tr key={Image._id}>
       <td className="categorys-info">
         <img
-          src={`https://kale-cafe-server.onrendercom/uploads/${Image.image}`}
+          src={`https://kale-cafe-server.onrender.com/uploads/${Image.image}`}
           height={150}
           width={150}
         />
