@@ -11,7 +11,7 @@ function FoodsPage() {
   const fetchFoods = () => {
     setIsLoading(true);
     console.log(isLoading);
-    fetch("http://localhost:5000/api/getFoods", {
+    fetch("https://kale-cafe-server.com/api/getFoods", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function FoodsPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/api/deleteFood/${_id}`, {
+        fetch(`https://kale-cafe-server.com/api/deleteFood/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -130,8 +130,8 @@ function FoodsPage() {
     setIsSubmitting(true);
 
     const url = isEditMode
-      ? `http://localhost:5000/api/updateFood/${editFoodId}`
-      : "http://localhost:5000/api/addFood";
+      ? `https://kale-cafe-server.com/api/updateFood/${editFoodId}`
+      : "https://kale-cafe-server.com/api/addFood";
 
     const method = isEditMode ? "PUT" : "POST";
 
@@ -176,7 +176,7 @@ function FoodsPage() {
           onClick={() => deleteFood(Food._id)}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
@@ -191,7 +191,7 @@ function FoodsPage() {
           onClick={() => openEditModal(Food)}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
@@ -229,7 +229,7 @@ function FoodsPage() {
               />
               <button className="btn btn-secondary" type="submit">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"

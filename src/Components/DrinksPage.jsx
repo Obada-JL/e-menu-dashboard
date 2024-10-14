@@ -11,7 +11,7 @@ function DrinksPage() {
   const fetchDrinks = () => {
     setIsLoading(true);
     console.log(isLoading);
-    fetch("http://localhost:5000/api/getDrinks", {
+    fetch("https://kale-cafe-server.com/api/getDrinks", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function DrinksPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/api/deleteDrink/${_id}`, {
+        fetch(`https://kale-cafe-server.com/api/deleteDrink/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -130,8 +130,8 @@ function DrinksPage() {
     setIsSubmitting(true);
 
     const url = isEditMode
-      ? `http://localhost:5000/api/updateDrink/${editDrinkId}`
-      : "http://localhost:5000/api/addDrink";
+      ? `https://kale-cafe-server.com/api/updateDrink/${editDrinkId}`
+      : "https://kale-cafe-server.com/api/addDrink";
 
     const method = isEditMode ? "PUT" : "POST";
 
@@ -166,7 +166,7 @@ function DrinksPage() {
 
   //   try {
   //     const response = await fetch(
-  //       `http://localhost:5000/api/searchDrink?q=${encodeURIComponent(
+  //       `https://kale-cafe-server.com/api/searchDrink?q=${encodeURIComponent(
   //         searchValue
   //       )}`,
   //       {
@@ -204,7 +204,7 @@ function DrinksPage() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/searchDrink?q=${encodeURIComponent(
+        `https://kale-cafe-server.com/api/searchDrink?q=${encodeURIComponent(
           searchValue
         )}`,
         {
@@ -244,7 +244,7 @@ function DrinksPage() {
           onClick={() => deleteDrink(Drink._id)}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
@@ -259,7 +259,7 @@ function DrinksPage() {
           onClick={() => openEditModal(Drink)}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
@@ -297,7 +297,7 @@ function DrinksPage() {
               />
               <button className="btn btn-secondary" type="submit">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"

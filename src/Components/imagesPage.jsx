@@ -18,12 +18,15 @@ function ImagesPage() {
   const fetchImages = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/api/getImages", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://kale-cafe-server.com/api/getImages",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await response.json();
       setGetImages(data);
     } catch (error) {
@@ -44,7 +47,7 @@ function ImagesPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/api/deleteImage/${_id}`, {
+        fetch(`https://kale-cafe-server.com/api/deleteImage/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -78,7 +81,7 @@ function ImagesPage() {
     e.preventDefault();
 
     try {
-      const url = "http://localhost:5000/api/addImage";
+      const url = "https://kale-cafe-server.com/api/addImage";
 
       // Create a FormData object to handle the form data and file upload
       const formDataToSend = new FormData();
@@ -118,7 +121,7 @@ function ImagesPage() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/searchDrink?q=${encodeURIComponent(
+        `https://kale-cafe-server.com/api/searchDrink?q=${encodeURIComponent(
           searchValue
         )}`,
         {
@@ -153,7 +156,7 @@ function ImagesPage() {
     <tr key={Image._id}>
       <td className="categorys-info">
         <img
-          src={`http://localhost:5000/uploads/${Image.image}`}
+          src={`https://kale-cafe-server.com/uploads/${Image.image}`}
           height={150}
           width={150}
         />
@@ -166,7 +169,7 @@ function ImagesPage() {
           onClick={() => deleteImage(Image._id)}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
@@ -181,7 +184,7 @@ function ImagesPage() {
           onClick={() => openEditModal(Image)}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
@@ -219,7 +222,7 @@ function ImagesPage() {
             />
             <button className="btn btn-secondary" type="submit">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="https://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 fill="currentColor"

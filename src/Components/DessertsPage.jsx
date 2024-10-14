@@ -11,7 +11,7 @@ function DessertsPage() {
   const fetchDesserts = () => {
     setIsLoading(true);
     console.log(isLoading);
-    fetch("http://localhost:5000/api/getDesserts", {
+    fetch("https://kale-cafe-server.com/api/getDesserts", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function DessertsPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/api/deleteDessert/${_id}`, {
+        fetch(`https://kale-cafe-server.com/api/deleteDessert/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -132,8 +132,8 @@ function DessertsPage() {
     setIsSubmitting(true);
 
     const url = isEditMode
-      ? `http://localhost:5000/api/updateDessert/${editDessertId}`
-      : "http://localhost:5000/api/addDessert";
+      ? `https://kale-cafe-server.com/api/updateDessert/${editDessertId}`
+      : "https://kale-cafe-server.com/api/addDessert";
 
     const method = isEditMode ? "PUT" : "POST";
 
@@ -180,7 +180,7 @@ function DessertsPage() {
           onClick={() => deleteDessert(Dessert._id)}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
@@ -195,7 +195,7 @@ function DessertsPage() {
           onClick={() => openEditModal(Dessert)}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
@@ -233,7 +233,7 @@ function DessertsPage() {
               />
               <button className="btn btn-secondary" type="submit">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
