@@ -11,7 +11,7 @@ function DessertsPage() {
   const fetchDesserts = () => {
     setIsLoading(true);
     console.log(isLoading);
-    fetch("https://kale-cafe-server.com/api/getDesserts", {
+    fetch("https://kale-cafe-server.onrendercom/api/getDesserts", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function DessertsPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://kale-cafe-server.com/api/deleteDessert/${_id}`, {
+        fetch(`https://kale-cafe-server.onrendercom/api/deleteDessert/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -132,8 +132,8 @@ function DessertsPage() {
     setIsSubmitting(true);
 
     const url = isEditMode
-      ? `https://kale-cafe-server.com/api/updateDessert/${editDessertId}`
-      : "https://kale-cafe-server.com/api/addDessert";
+      ? `https://kale-cafe-server.onrendercom/api/updateDessert/${editDessertId}`
+      : "https://kale-cafe-server.onrendercom/api/addDessert";
 
     const method = isEditMode ? "PUT" : "POST";
 
