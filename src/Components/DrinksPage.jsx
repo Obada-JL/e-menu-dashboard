@@ -287,7 +287,7 @@ function DrinksPage() {
               اضافة صنف
             </button>
           </div>
-          <div class="search-container">
+          {/* <div class="search-container">
             <form onSubmit={onItemSearch}>
               <input
                 type="text"
@@ -308,7 +308,7 @@ function DrinksPage() {
                 </svg>
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
 
         {/* <div className="d-flex flex-wrap gap-3 flex-row-reverse p-3 justify-content-between">

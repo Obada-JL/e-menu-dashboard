@@ -211,7 +211,7 @@ function ImagesPage() {
             اضافة صنف
           </button>
         </div>
-        <div className="search-container">
+        {/* <div className="search-container">
           <form onSubmit={Search}>
             <input
               type="text"
@@ -233,7 +233,7 @@ function ImagesPage() {
               </svg>
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
       <table
         className="table table-hover table-striped border-top mt-3"
