@@ -31,6 +31,11 @@ function NavBar() {
               الصور
             </a>
           </li>
+          <li>
+            <a href="/specialImages" className="menu__link">
+              الصور الرئيسية
+            </a>
+          </li>
         </ul>
       </div>
     </div>
