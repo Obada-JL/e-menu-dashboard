@@ -18,7 +18,7 @@ function ImagesPage() {
   const fetchImages = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("https://kale-cafe.com/api/getImages", {
+      const response = await fetch("http://145.223.33.75/api/getImages", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ function ImagesPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://kale-cafe.com/api/deleteImage/${_id}`, {
+        fetch(`http://145.223.33.75/api/deleteImage/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -78,7 +78,7 @@ function ImagesPage() {
     e.preventDefault();
 
     try {
-      const url = "https://kale-cafe.com/api/addImage";
+      const url = "http://145.223.33.75/api/addImage";
 
       // Create a FormData object to handle the form data and file upload
       const formDataToSend = new FormData();
@@ -118,7 +118,7 @@ function ImagesPage() {
 
     try {
       const response = await fetch(
-        `https://kale-cafe.com/api/searchDrink?q=${encodeURIComponent(
+        `http://145.223.33.75/api/searchDrink?q=${encodeURIComponent(
           searchValue
         )}`,
         {
@@ -153,7 +153,7 @@ function ImagesPage() {
     <tr key={Image._id}>
       <td className="categorys-info">
         <img
-          src={`https://kale-cafe.com/uploads/${Image.image}`}
+          src={`http://145.223.33.75/uploads/${Image.image}`}
           height={150}
           width={150}
         />
