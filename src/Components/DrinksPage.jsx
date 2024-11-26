@@ -11,7 +11,7 @@ function DrinksPage() {
   const fetchDrinks = () => {
     setIsLoading(true);
     console.log(isLoading);
-    fetch("http://145.223.33.75/api/getDrinks", {
+    fetch("https://kale-cafe.com/api/getDrinks", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function DrinksPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://145.223.33.75/api/deleteDrink/${_id}`, {
+        fetch(`https://kale-cafe.com/api/deleteDrink/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -130,8 +130,8 @@ function DrinksPage() {
     setIsSubmitting(true);
 
     const url = isEditMode
-      ? `http://145.223.33.75/api/updateDrink/${editDrinkId}`
-      : "http://145.223.33.75/api/addDrink";
+      ? `https://kale-cafe.com/api/updateDrink/${editDrinkId}`
+      : "https://kale-cafe.com/api/addDrink";
 
     const method = isEditMode ? "PUT" : "POST";
 
@@ -166,7 +166,7 @@ function DrinksPage() {
 
   //   try {
   //     const response = await fetch(
-  //       `http://145.223.33.75/api/searchDrink?q=${encodeURIComponent(
+  //       `https://kale-cafe.com/api/searchDrink?q=${encodeURIComponent(
   //         searchValue
   //       )}`,
   //       {
@@ -204,7 +204,7 @@ function DrinksPage() {
 
     try {
       const response = await fetch(
-        `http://145.223.33.75/api/searchDrink?q=${encodeURIComponent(
+        `https://kale-cafe.com/api/searchDrink?q=${encodeURIComponent(
           searchValue
         )}`,
         {

@@ -11,7 +11,7 @@ function FoodsPage() {
   const fetchFoods = () => {
     setIsLoading(true);
     console.log(isLoading);
-    fetch("http://145.223.33.75/api/getFoods", {
+    fetch("https://kale-cafe.com/api/getFoods", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function FoodsPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://145.223.33.75/api/deleteFood/${_id}`, {
+        fetch(`https://kale-cafe.com/api/deleteFood/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -130,8 +130,8 @@ function FoodsPage() {
     setIsSubmitting(true);
 
     const url = isEditMode
-      ? `http://145.223.33.75/api/updateFood/${editFoodId}`
-      : "http://145.223.33.75/api/addFood";
+      ? `https://kale-cafe.com/api/updateFood/${editFoodId}`
+      : "https://kale-cafe.com/api/addFood";
 
     const method = isEditMode ? "PUT" : "POST";
 

@@ -19,7 +19,7 @@ function SpecialImagesPage() {
     try {
       setIsLoading(true);
       const response = await fetch(
-        "http://145.223.33.75/api/getSpecialImages",
+        "https://kale-cafe.com/api/getSpecialImages",
         {
           method: "GET",
           headers: {
@@ -47,7 +47,7 @@ function SpecialImagesPage() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://145.223.33.75/api/deleteSpecialImage/${_id}`, {
+        fetch(`https://kale-cafe.com/api/deleteSpecialImage/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -81,7 +81,7 @@ function SpecialImagesPage() {
     e.preventDefault();
 
     try {
-      const url = "http://145.223.33.75/api/addSpecialImage";
+      const url = "https://kale-cafe.com/api/addSpecialImage";
 
       // Create a FormData object to handle the form data and file upload
       const formDataToSend = new FormData();
@@ -121,7 +121,7 @@ function SpecialImagesPage() {
 
     try {
       const response = await fetch(
-        `http://145.223.33.75/api/searchDrink?q=${encodeURIComponent(
+        `https://kale-cafe.com/api/searchDrink?q=${encodeURIComponent(
           searchValue
         )}`,
         {
@@ -156,7 +156,7 @@ function SpecialImagesPage() {
     <tr key={Image._id}>
       <td className="categorys-info">
         <img
-          src={`http://145.223.33.75/uploads/${Image.image}`}
+          src={`https://kale-cafe.com/uploads/${Image.image}`}
           height={150}
           width={150}
         />
