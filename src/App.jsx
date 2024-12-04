@@ -10,6 +10,7 @@ import DessertsPage from "./Components/DessertsPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ImagesPage from "./Components/imagesPage";
 import SpecialImagesPage from "./Components/SpecialImages";
+import HookahsPage from "./Components/HookahPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,7 @@ function App() {
         { path: "/desserts", element: <DessertsPage /> },
         { path: "/images", element: <ImagesPage /> },
         { path: "/specialImages", element: <SpecialImagesPage /> },
+        { path: "/hookahs", element: <HookahsPage /> },
       ],
     },
   ]);

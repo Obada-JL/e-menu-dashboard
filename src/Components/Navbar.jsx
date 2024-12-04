@@ -27,6 +27,11 @@ function NavBar() {
             </a>
           </li>
           <li>
+            <a href="/hookahs" className="menu__link">
+              الأراكيل
+            </a>
+          </li>
+          <li>
             <a href="/images" className="menu__link">
               الصور
             </a>
